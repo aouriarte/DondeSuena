@@ -85,8 +85,8 @@ Para probar ser un administrador en la página ingresa las siguientes credencial
 La pasarela de pago se encuentra _en modo de prueba_ para que cualquier pueda probarle sin necesidad de gastar dinero de verdad.
 Para probarla primero deberás logearte en mercadopago con las siguiente credenciales:
 
--   Usuario:
--   Contraseña:
+-   Usuario: TETE1918838
+-   Contraseña: XLVCQPsmEX
 
 Una vez logeado podras utilizar los siguientes datos para simular un pago:
 
