@@ -95,10 +95,6 @@ Una vez logeado podras utilizar los siguientes datos para simular un pago:
 - Titular: APRO (Si quieres que el pago se apruebe) o OTHE (Si quieres simular un pago fallido).
 - CVV: 123
 
-### Demostración del proyecto:
-
-<!-- Capturas o gift del sitio web -->
-
 ## Sobre nosotros
 
 Nuestro equipo está conformado por 8 integrantes: [Alexis Uriarte](https://github.com/Auriarte20), [Diamela Lares](https://github.com/diamecjs), [Ezequiel Ramirez](https://github.com/Eze-lp), [Lautaro Santillan](https://github.com/LautiSantillan), [Martin Fernandez](https://github.com/martinsosafer), [Martin Canolik](https://github.com/MartinCanolik), [Tomas Arconstanzo](https://github.com/tomychi), [Willians Jimenez](https://github.com/williansaaid007). Somos un equipo con mucha química, pasión, ánimo y energía para trabajar. Dispuestos a seguir aprendiendo de otras personas y por nosotros mismos. Realizamos este sitio web como instancia del proyecto final en el bootcamp de [HENRY](https://www.soyhenry.com), afianzamos cada una de las tecnologías aprendidas en la carrera y más.
