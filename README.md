@@ -6,7 +6,7 @@
   <img height="150" src="./Proyecto_Grupal_Logo.png" />
 </p>
 
-## Resumen
+## Resumen  
 
 El objetivo principal de este sitio web es poder visualizar propuestas de espectáculos musicales en tu ciudad más cercana y poder comprar entradas de tus bandas/artistas favoritos. Así también, brindar la posibilidad de que artistas puedan crear eventos de sus próximos shows e interactuar a través de publicaciones con sus seguidores, **contribuyendo de esta manera al crecimiento profesional de cada artista y de la comunidad dentro del sitio**.
 
