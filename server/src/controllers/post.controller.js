@@ -47,7 +47,7 @@ const getAllPosts = async (req, res = response) => {
                     }
                 ]
             });
-        return res.status(200).json({
+        res.status(200).json({
             msg: 'Todos los post de los artistas',
             allPosts,
         });

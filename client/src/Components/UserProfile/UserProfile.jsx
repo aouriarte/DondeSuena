@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,11 +6,13 @@ import { getUserById } from "../../Redux/Slices/User/userAction";
 import UserEditForm from "../UserEdit/UserEdit";
 import UserFavorites from "../UserFavorites/UserFavorites";
 import MyShopping from "../MyShopping/MyShopping";
-import { deleteUser, forgotPassword, logOut } from "../../Redux/Slices/Session/sessionActions";
+import {
+    deleteUser,
+    forgotPassword,
+    logOut,
+} from "../../Redux/Slices/Session/sessionActions";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function UserProfile() {
     const dispatch = useDispatch();
@@ -47,7 +48,6 @@ export default function UserProfile() {
         tab.addEventListener("click", () => {
             let target = tab;
             //itero sobre los elementos y les saco el fondo activo
-
             handleChangeTab(target);
         });
     });
@@ -68,49 +68,49 @@ export default function UserProfile() {
 
     const confirmDeletion = () => {
         Swal.fire({
-            title: '¿Seguro quieres eliminar tu cuenta?',
+            title: "¿Seguro quieres eliminar tu cuenta?",
             text: "Este cambio no se podrá revertir!",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínala!',
-            cancelButtonText: 'Cancelar'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, elimínala!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                dispatch(deleteUser(userId.id?userId.id:userId.id));
+                dispatch(deleteUser(userId.id ? userId.id : userId.id));
                 Swal.fire(
-                    'Cuenta Eliminada!',
-                    'Te vamos a extrañar :(',
-                    'success'
-                )
+                    "Cuenta Eliminada!",
+                    "Te vamos a extrañar :(",
+                    "success"
+                );
                 setTimeout(navigate("/"), 3000);
             }
-        })
+        });
     };
 
     const confirmChangePassword = () => {
         Swal.fire({
-            title: '¿Seguro quieres cambiar la contraseña?',
+            title: "¿Seguro quieres cambiar la contraseña?",
             text: "Si confirmas se cerrará la sesión",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, quiero cambiarla!',
-            cancelButtonText: 'Cancelar'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, quiero cambiarla!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
                 dispatch(logOut());
-                dispatch(forgotPassword({email: userId.email}));
+                dispatch(forgotPassword({ email: userId.email }));
             }
-        })
+        });
     };
 
     const handleEdit = () => {
         setEditInfo(!editInfo);
     };
-    const handleChangePassword = () =>{
+    const handleChangePassword = () => {
         confirmChangePassword();
     };
     const handleDeleteAccount = () => {
@@ -232,64 +232,3 @@ export default function UserProfile() {
         </div>
     );
 }
-
-// <div className="container min-w-full">
-//     <div className="grid grid-cols-1 md:grid-cols-2 ">
-//         <div className="hidden bg-customRed md:block pt-10">
-//             <button>Editar Perfil</button>
-//             <div className="relative w-full flex justify-center h-52">
-//                 <img
-//                     src={userId.image}
-//                     className="shadow-xl rounded-full align-middle border-none absolute -ml-20 lg:-ml-16 max-w-[150px]"
-//                     alt=""
-//                 />
-//             </div>
-//             <img
-//                 src="https://static.wixstatic.com/media/cc66dc_47b22f588e3b4f1f882bec92cdac68e0~mv2.gif"
-//                 alt=""
-//                 width="750px"
-//                 height="5px"
-//                 className="mt-10"
-//             />
-//             <h3 className=" flex justify-center mt-10 mr-14 text-2xl text-black font-bold mb-1">
-//                 {userId.firstName} {userId.lastName}
-//             </h3>
-//             <div className="flex justify-center mt-6 py-6 border-t border-slate-200">
-//                 <div className=" block uppercase tracking-wideflex justify-center mt-10text-2xl text-slate-300 font-bold leading-normal mb-1 mr-14">
-//                     {userId.email}
-//                     {/* <FontAwesomeIcon icon="fa-regular fa-image" /> */}
-//                 </div>
-//             </div>
-//             <div className="flex justify-center mt-10 text-2xl text-slate-700 font-bold leading-normal mb-1 mr-14"></div>
-//         </div>
-// <div className=" bg-customGray">
-//     <ul className="flex items-center justify-center bg-white">
-//         <li
-//             id="select-tab"
-//             className="p-2  w-full font-bold cursor-pointer bg-customRed hover:bg-red-300"
-//         >
-//             Mis artistas Favoritos ⭐
-//         </li>
-//         <li
-//             id="select-tab"
-//             className="p-2  w-full font-bold cursor-pointer hover:bg-red-300"
-//         >
-//             Mis Compras 🛒
-//         </li>
-//     </ul>
-//     <section
-//         id="select-content"
-//         className="container min-h-0 bg-customGray p-2 text-4xl flex items-center justify-center"
-//     >
-//         <UserFavorites />
-//     </section>
-//     <section
-//         id="select-content"
-//         className="container min-h-0 bg-customGray p-3 text-4xl flex items-center justify-center"
-//     >
-//         <MyShopping />
-//     </section>
-// </div>
-// </div>
-
-// </div>

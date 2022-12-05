@@ -14,7 +14,6 @@ import { logUser } from "../../Redux/Slices/Session/sessionSlice";
 
 const Login = () => {
     const dispatch = useDispatch();
-    // const googleToken = useSelector((state) => state.googleToken);
     const navigate = useNavigate();
     const location = useLocation();
     const { loginOpen } = useSelector((state) => state.modalState);
@@ -68,16 +67,6 @@ const Login = () => {
             setTimeout(handleSetModal, 3000);
         });
     };
-
-    // const handleSignOut = () => {
-    //     const google = window.google;
-    //     google.accounts.id.disableAutoSelect();
-
-    //     google.accounts.id.revoke(localStorage.getItem("email"), (done) => {
-    //         localStorage.removeItem("email");
-    //         window.location.reload();
-    //     });
-    // };
 
     return (
         <ReactModal
@@ -192,7 +181,7 @@ const Login = () => {
                                 className="inline-block align-baseline font-bold text-xs text-gray-400 hover:text-customRed"
                             >
                                 <Link to="/forgotPassword">
-                                    Olvidaste tu contraseña?
+                                    ¿Olvidaste tu contraseña?
                                 </Link>
                             </span>
                         </div>
@@ -207,14 +196,14 @@ const Login = () => {
                         <div className="flex flex-wrap justify-between w-full px-3">
                             <div onClick={() => setLoginType(!loginType)}>
                                 <span className="gap-2 font-bold text-m text-gray-400 hover:text-gray-500 cursor-pointer">
-                                    Aun no estas registrado?
+                                    ¿Aún no estás registrado?
                                 </span>
                             </div>
                             <div
                                 onClick={handleSignIN}
                                 className="flex flex-wrap gap-2 font-bold text-m text-gray-400 hover:text-gray-500 cursor-pointer"
                             >
-                                <span>Iniciar sesion con Google</span>
+                                <span>Iniciar sesión con Google</span>
 
                                 <FcGoogle size={"1.5em"} />
                             </div>
@@ -256,7 +245,7 @@ const Login = () => {
                                             alt="Manito"
                                         />
                                         <h3 className="block tracking-wide text-white text-s font-bold mb-2">
-                                            Publico
+                                            Público
                                         </h3>
                                     </div>
                                 </div>

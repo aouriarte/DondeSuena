@@ -27,6 +27,7 @@ const createTicket = async (req, res = response) => {
             msg: `Tenés ${quantity} tickets para ir a ${event} `,
             newTicket,
         });
+
     } catch (error) {
         console.log('ERROR EN createTicket', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -59,6 +60,7 @@ const createTicketMP = async (req, res = response) => {
             msg: `Tenés ${purchasedQuantity} tickets para ir a ${event} `,
             newTicket,
         });
+
     } catch (error) {
         console.log('ERROR EN createTicket', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -82,6 +84,7 @@ const getTicket = async (req, res = response) => {
             msg: 'Este es tu ticket',
             ticketId,
         });
+
     } catch (error) {
         console.log('ERROR EN getTicket', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -117,6 +120,7 @@ const getTickets = async (req, res = response) => {
             msg: 'Todos tus tickets',
             allTickets,
         });
+
     } catch (error) {
         console.log('ERROR EN getTickets', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -142,6 +146,7 @@ const updateStockTickets = async (req, res = response) => {
         res.status(201).send({
             msg: 'Se actualizó el stock de tickets para el Evento',
         });
+
     } catch (error) {
         console.log('ERROR EN updateStockTickets', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -159,6 +164,7 @@ const getStockTickets = async (req, res = response) => {
             msg: 'Stock de tickets',
             stock,
         });
+
     } catch (error) {
         console.log('ERROR EN getStockTickets', error);
         res.status(500).send({ msg: 'Hable con el administrador' });
@@ -185,6 +191,7 @@ const getTicketByEvent = async (req, res = response) => {
             msg: 'Tickets por evento',
             countTickets,
         });
+
     } catch (error) {
         console.log('ERROR EN getTicketByEvent', error);
         res.status(500).send({ msg: 'Hable con el administrador' });

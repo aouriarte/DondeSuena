@@ -31,9 +31,6 @@ export const ArtistProfile = () => {
         window.scroll(coordenadaX, coordenadaY);
     }, []);
 
-    // useEffect(() => {
-    //     dispatch(getPostById(artistId?.nickname));
-    // }, [dispatch,artistId?.nickname]);
     const handleSetModal = () => {
         dispatch(setPostvarModal());
     };

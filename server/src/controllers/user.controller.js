@@ -362,11 +362,10 @@ const getFavoritesById = async (req, res = response) => {
 const deleteFavoriteArtist = async (req, res = response) => {
     try {
         const { id } = req.params;
-       
-        await Favorite.destroy({ where: { id: id } });
 
+        await Favorite.destroy({ where: { id: id } });
         res.status(200).send({ msg: 'Artista favorito eliminado' });
-        
+
     } catch (error) {
         console.log(error);
         res.status(500).send({ msg: 'Por favor hable con el administrador' });
@@ -528,11 +527,11 @@ const deleteUser = async (req, res = response) => {
 
 const sendInvoice = async (req, res = response) => {
     const {
-            name,
-            email,
-            quantity,
-            id
-        } = req.body;
+        name,
+        email,
+        quantity,
+        id
+    } = req.body;
     try {
         const event = await Event.findByPk(id);
         const transporter = nodemailer.createTransport({
@@ -606,6 +605,7 @@ const sendInvoice = async (req, res = response) => {
                 });
             }
         });
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -753,6 +753,7 @@ const changeStateUser = async (req, res = response) => {
             ok: true,
             msg: 'Usuario activado',
         });
+
     } catch (error) {
         console.log(error);
         res.status(500).json({

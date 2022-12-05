@@ -25,7 +25,6 @@ const {
     deletePost,
 } = require('../controllers/post.controller');
 const {
-    createLikeArtist,
     createCommentArtist,
     getComments,
     addCommentArtist,

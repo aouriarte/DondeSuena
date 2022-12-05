@@ -8,7 +8,6 @@ import { setScroll } from "../../Redux/Slices/Scroll/ScrollActions";
 import "./Tabs.css";
 
 function Tabs() {
-    // const [toggleState, setToggleState] = useState(1);
     const dispatch = useDispatch();
     const { profileArtistState } = useSelector((state) => state.profileState);
     const { artistId } = useSelector((state) => state.artistId);

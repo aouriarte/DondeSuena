@@ -5,9 +5,7 @@ import { useParams } from "react-router-dom";
 import { getComments } from "../../Redux/Slices/Comments/commentsAction";
 import { Comments } from "../CommentsUser/Comments";
 import { DateTime } from "../DateTime/DateTime";
-
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 
 export const PostDetail = () => {
     const dispatch = useDispatch();
@@ -18,8 +16,6 @@ export const PostDetail = () => {
     useEffect(() => {
         dispatch(getComments(id));
     }, [dispatch, id]);
-
-  
 
     return (
         <div class="wrapper pt-10 px-8 flex flex-col items-center">
@@ -53,15 +49,6 @@ export const PostDetail = () => {
                 <div class="py-4 items-center ml-15">
                     <div class="  max-w-smv ml-10 ">
                         <div class="content-center  m-auto max-w-sm ml-29  gap-4 object-contain ">
-                            {/* <img
-                                                        className="content-center  m-auto max-w-sm ml-29  gap-4 object-contain ml-20"
-                                                        src={
-                                                            el.image
-                                                                ? el.image
-                                                                : null
-                                                        }
-                                                        alt=""
-                                                    /> */}
                             {postDetail.image.includes(".mp4") && (
                                 <video width="750" height="500" controls>
                                     <source
@@ -171,13 +158,6 @@ export const PostDetail = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* <input
-                    class="pt-2 pb-2 pl-3 w-full h-11 bg-slate-100 dark:bg-white rounded-lg placeholder:text-slate-600 dark:placeholder:text-slate-400 font-medium pr-20"
-                    type="text"
-                    placeholder="Escribe tu comentario"
-                    disabled
-                /> */}
             </div>
             <div className=" w-96 p-3 mr-10  relative ">
                 <div className="w-11/12 ">
@@ -209,7 +189,6 @@ export const PostDetail = () => {
                                     <div class=" dark:text-slate-200 flex-1 px-2 ml-2 text-sm font-medium leading-loose text-gray-600">
                                         {el.body}
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>

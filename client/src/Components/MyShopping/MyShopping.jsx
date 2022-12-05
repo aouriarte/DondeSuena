@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FiCalendar } from "react-icons/fi";
 
-const MyShopping = (props) => {
+const MyShopping = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const { tickets } = useSelector((state) => state.userState);
@@ -30,7 +30,7 @@ const MyShopping = (props) => {
 
     return (
         <div className="w-full flex justify-around flex-wrap overflow-y-auto bg-gradient-to-tr from-customGray to-customRed">
-            {ticketsData.length?
+            {ticketsData.length ? (
                 ticketsData.flat().map((el) => {
                     return (
                         <div
@@ -38,7 +38,8 @@ const MyShopping = (props) => {
                             key={el.evento.id}
                         >
                             <div className="flex flex-col m-5 w-80 h-[35rem] items-center justify-center overflow-hidden rounded-3xl backdrop-blur-xl shadow-2xl border border-transparent hover:border-white transition duration-500 ease-in-out">
-                                <Link to={`/details/${el.evento.id}`}
+                                <Link
+                                    to={`/details/${el.evento.id}`}
                                     className="w-full h-full"
                                 >
                                     <div className="w-full h-1/3">
@@ -55,7 +56,9 @@ const MyShopping = (props) => {
                                             </h5>
                                             <div className="flex flex-col flex-wrap gap-3 border-b-2 pb-8">
                                                 <div className="flex justify-start items-center flex-wrap text-slate-300 gap-2">
-                                                    <FiCalendar size={"1.5rem"} />
+                                                    <FiCalendar
+                                                        size={"1.5rem"}
+                                                    />
                                                     <h3 className="text-slate-200 font-bold text-xl">
                                                         {el.ticket.date}
                                                     </h3>
@@ -70,26 +73,26 @@ const MyShopping = (props) => {
                                                 </div>
                                             </div>
                                             <h5 className="text-slate-300 font-bold text-xl">
-                                                Precio Total: {el.ticket.priceTotal}$
+                                                Precio Total:{" "}
+                                                {el.ticket.priceTotal}$
                                             </h5>
                                             <h5 className="text-slate-300 font-bold text-xl">
                                                 Tickets: {el.ticket.quantity}
                                             </h5>
                                         </div>
-
                                     </div>
                                 </Link>
                             </div>
                         </div>
                     );
                 })
-                : <div
-                    className="flex flex-col m-5 w-1/2 h-fit p-8 items-center justify-center overflow-hidden rounded-3xl backdrop-blur-xl shadow-2xl border border-transparent hover:border-white transition duration-500 ease-in-out">
+            ) : (
+                <div className="flex flex-col m-5 w-1/2 h-fit p-8 items-center justify-center overflow-hidden rounded-3xl backdrop-blur-xl shadow-2xl border border-transparent hover:border-white transition duration-500 ease-in-out">
                     <p className="text-center text-white italic">
                         Tu Historial de Compras está vacío
                     </p>
                 </div>
-            }
+            )}
         </div>
     );
 };

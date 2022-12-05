@@ -7,20 +7,14 @@ import { Comments } from "../CommentsUser/Comments";
 import { DateTime } from "../DateTime/DateTime";
 import { Link } from "react-router-dom";
 
-export const PostCard = ({ props }) => {
+export const PostCard = () => {
     const dispatch = useDispatch();
     const { posts } = useSelector((state) => state.posts);
     const [visible, setVisible] = useState();
-    const [comment, setComment] = useState("");
-    const { artists } = useSelector((state) => state.artistState);
 
     useEffect(() => {
         dispatch(getPosts());
     }, [dispatch]);
-
-    const showMorePost = () => {
-        setVisible((prevValue) => prevValue + 4);
-    };
 
     useEffect(() => {
         dispatch(getArtists());
@@ -64,15 +58,6 @@ export const PostCard = ({ props }) => {
                                 <div class="py-4 items-center ml-15">
                                     <div class="  max-w-smv ml-10 ">
                                         <div class="content-center  m-auto max-w-sm ml-29  gap-4 object-contain ">
-                                            {/* <img
-                                                        className="content-center  m-auto max-w-sm ml-29  gap-4 object-contain ml-20"
-                                                        src={
-                                                            el.image
-                                                                ? el.image
-                                                                : null
-                                                        }
-                                                        alt=""
-                                                    /> */}
                                             {el.image.includes(".mp4") && (
                                                 <video
                                                     width="750"

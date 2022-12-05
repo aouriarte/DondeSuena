@@ -127,6 +127,7 @@ const searchAllData = async (req, res = response) => {
             ok: true,
             results,
         });
+        
     } catch (error) {
         return res.status(500).json({
             ok: false,

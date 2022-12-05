@@ -13,14 +13,14 @@ const {
 const port = process.env.PORT || 3000;
 // Syncing all the models at once
 conn.sync({ force: false }).then(async () => {
-    loadUsers();
-    loadEvents();
-    loadArtists();
-    loadPlaces();
-    loadGenres();
-    loadTeam();
-    server.listen(port, () => {
-        console.log(`servidor corriendo en puerto: ${port}`); // eslint-disable-line no-console
-    });
+  loadUsers();
+  loadEvents();
+  loadArtists();
+  loadPlaces();
+  loadGenres();
+  loadTeam();
+  server.listen(port, () => {
+    console.log(`servidor corriendo en puerto: ${port}`); // eslint-disable-line no-console
+  });
 
 });

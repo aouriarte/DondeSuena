@@ -109,7 +109,7 @@ const updatePlace = async (req, res = response) => {
             ok: true,
             place,
         });
-        
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -164,6 +164,7 @@ const changeStatePlace = async (req, res = response) => {
             ok: true,
             place,
         });
+        
     } catch (error) {
         console.log(error);
         res.status(500).json({

@@ -98,9 +98,8 @@ const createArtist = async (req, res = response) => {
             subject: 'Confirmación de registro',
             html: `<h1>Gracias por registrarte en DondeSuena</h1>
             <p>Para confirmar tu registro haz click en el siguiente enlace</p>
-            <a href="${
-                process.env.FRONT_URL || 'http://localhost:3000'
-            }/confirm/${token}">Confirmar registro</a>`,
+            <a href="${process.env.FRONT_URL || 'http://localhost:3000'
+                }/confirm/${token}">Confirmar registro</a>`,
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
@@ -209,7 +208,7 @@ const updateArtist = async (req, res = response) => {
             msg: 'Usuario actualizado',
             artist,
         });
-        
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -267,7 +266,7 @@ const deleteArtist = async (req, res = response) => {
             ok: true,
             msg: 'Usuario eliminado',
         });
-        
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -295,6 +294,7 @@ const changeStateArtist = async (req, res = response) => {
             ok: true,
             msg: 'Usuario activado',
         });
+        
     } catch (error) {
         console.log(error);
         res.status(500).json({

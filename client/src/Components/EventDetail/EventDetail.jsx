@@ -1,20 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useSearchParams } from "react-router-dom";
-import {
-    getEventsById,
-    updateTickets,
-    getQuantityTickets,
-} from "../../Redux/Slices/Event/eventActions";
+import { getEventsById, updateTickets, getQuantityTickets } from "../../Redux/Slices/Event/eventActions";
 import { useNavigate } from "react-router-dom";
 import useGoogleAddress from "../../hooks/useGoogleAddress";
 import Map from "../Map/Map";
-import {
-    ticketPurchase,
-    clearUrl,
-    createTicketMP,
-    sendInvoice,
-} from "../../Redux/Slices/User/userAction";
+import { ticketPurchase, clearUrl, createTicketMP, sendInvoice } from "../../Redux/Slices/User/userAction";
 import { setLoginModal } from "../../Redux/Slices/Modals/modalActions";
 import Loading from "../Loading/Loading";
 import { changeLoading } from "../../Redux/Slices/Loading/LoadingActions";

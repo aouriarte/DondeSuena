@@ -6,7 +6,6 @@ import { postArtist } from "../../Redux/Slices/Artist/artistActions";
 import axios from "axios";
 
 export const PostVar = () => {
-    const artistId = useSelector((state) => state.artistId);
     const dispatch = useDispatch();
     const [image, setImage] = useState("");
     const [loading, setLoading] = useState(false);
@@ -86,15 +85,6 @@ export const PostVar = () => {
                                 alt="user profile"
                                 className="object-cover w-14 h-14 border-2 border-gray-300 rounded-full mb-5"
                             />
-
-                            {/* <input
-                     className="w-full text-customGray bg-gray-200 rounded-xl focus:outline-none focus:bg-white focus:border-gray-500 py-2 px-4"
-                     type="text"
-                     value={input.title}
-                     name="title"
-                     onChange={handleChange}
-                     placeholder="Título"
-                 /> */}
                             <textarea
                                 type="textarea"
                                 rows="2"
@@ -106,12 +96,6 @@ export const PostVar = () => {
                             />
                         </div>
                         <div className="w-full border-2 flex flex-col justify-center items-center rounded-xl p-4 gap-4">
-                            {/* <label
-                         htmlFor="image"
-                         className="text-white bg-customRed rounded-xl px-6 font-bold italic"
-                     >
-                         Imágen o video{" "}
-                     </label> */}
                             <input
                                 id="image"
                                 className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-customRed file:text-white hover:file:bg-gray-400 cursor-pointer mb-2"

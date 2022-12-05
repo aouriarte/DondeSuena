@@ -107,7 +107,6 @@ const UserForm = () => {
                                 </ErrorMessage>
                             </div>
                         </div>
-                        {/* <div className="flex flex-wrap w-full"> */}
                         <div className="w-full  px-3">
                             <label
                                 htmlFor="email"
@@ -297,7 +296,7 @@ const UserForm = () => {
                                 htmlFor="acceptedTerms"
                                 className="block tracking-wide text-white text-s font-bold"
                             >
-                                Acepto los{" "}
+                                Acepto los
                                 <a
                                     href="#"
                                     className="inline-block align-baseline font-bold text-m text-gray-400 hover:text-customRed"

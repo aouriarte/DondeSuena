@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Formik, Form, Field, ErrorMessage } from "formik";
 import { editUserForm } from "../../Redux/Slices/Session/sessionActions";
-import { validationSchema } from "../../schemas/userRegister";
 import { editUserSchema } from "../../schemas/userEdit";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
@@ -17,14 +15,10 @@ const UserEditForm = () => {
     const { user } = useSelector((state) => state.sessionState);
     const [id] = useState(user.uid ? user.uid : user.id);
 
-    function navegar() {
-        navigate("/");
-    }
-
     const onSubmit = (values, actions) => {
         const formValues = {
             ...values,
-            image: image
+            image: image,
         };
         try {
             dispatch(editUserForm(formValues, id));
@@ -51,7 +45,6 @@ const UserEditForm = () => {
         setLoading(false);
     };
 
-
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
         useFormik({
             initialValues: {
@@ -67,7 +60,14 @@ const UserEditForm = () => {
     return (
         <div className="h-full w-full flex flex-col items-center justify-center bg-customGray font-source-sans rounded-3xl">
             <div className="flex border-2 bg-gray-400 w-52 h-52 items-center justify-center rounded-full overflow-hidden mt-8">
-                <img src={user.image || "https://res.cloudinary.com/ds41xxspf/image/upload/v1669140075/Donde-Suena-Assets/user_snefch.png"} className="object-cover w-full h-full" alt="" />
+                <img
+                    src={
+                        user.image ||
+                        "https://res.cloudinary.com/ds41xxspf/image/upload/v1669140075/Donde-Suena-Assets/user_snefch.png"
+                    }
+                    className="object-cover w-full h-full"
+                    alt=""
+                />
             </div>
             <form
                 onSubmit={handleSubmit}
@@ -115,7 +115,6 @@ const UserEditForm = () => {
                     <input
                         id="dni"
                         type="dni"
-                        
                         placeholder={`Escribe tu DNI`}
                         value={values.dni}
                         onChange={handleChange}
@@ -142,7 +141,6 @@ const UserEditForm = () => {
                     <input
                         id="birthday"
                         type="birthday"
-                        
                         placeholder={`Fecha de nacimiento`}
                         value={values.birthday}
                         onChange={handleChange}
@@ -154,89 +152,7 @@ const UserEditForm = () => {
                         }
                     />
                 </div>
-                {/* <div className="w-full px-3 mb-3 flex flex-col gap-2">
-                    <p className="block tracking-wide text-white text-lg font-bold text-center">
-                        Sitios Web
-                    </p>
-                    <div>
-                        <label
-                            htmlFor="instagram"
-                            className="block tracking-wide text-white text-s font-bold mb-2"
-                        >
-                            Instagram
-                            {errors.instagram && touched.instagram ? (
-                                <span className="text-customRed italic pl-1 text-xs font-semibold">
-                                    {errors.instagram}
-                                </span>
-                            ) : null}
-                        </label>
-                        <input
-                            id="instagram"
-                            type="url"
-                            placeholder="https://instagram.com/username"
-                            value={values.instagram}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className={
-                                errors.instagram && touched.instagram
-                                    ? "appearance-none block w-full bg-red-100 text-gray-700 border border-customRed rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                    : "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label
-                            htmlFor="twitter"
-                            className="block tracking-wide text-white text-s font-bold mb-2"
-                        >
-                            Twitter
-                            {errors.twitter && touched.twitter ? (
-                                <span className="text-customRed italic pl-1 text-xs font-semibold">
-                                    {errors.twitter}
-                                </span>
-                            ) : null}
-                        </label>
-                        <input
-                            id="twitter"
-                            type="url"
-                            placeholder="https://twitter.com/username"
-                            value={values.twitter}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className={
-                                errors.twitter && touched.twitter
-                                    ? "appearance-none block w-full bg-red-100 text-gray-700 border border-customRed rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                    : "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label
-                            htmlFor="spotify"
-                            className="block tracking-wide text-white text-s font-bold mb-2"
-                        >
-                            Spotify
-                            {errors.spotify && touched.spotify ? (
-                                <span className="text-customRed italic pl-1 text-xs font-semibold">
-                                    {errors.spotify}
-                                </span>
-                            ) : null}
-                        </label>
-                        <input
-                            id="spotify"
-                            type="url"
-                            placeholder="https://open.spotify.com/artist/yourprofile"
-                            value={values.spotify}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className={
-                                errors.spotify && touched.spotify
-                                    ? "appearance-none block w-full bg-red-100 text-gray-700 border border-customRed rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                    : "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            }
-                        />
-                    </div>
-                </div> */}
+
                 <div className="flex flex-wrap w-full">
                     <div className="w-full md:w-1/2 mb-6 md:mb-0 px-3">
                         <label
